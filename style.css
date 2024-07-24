@@ -1,0 +1,127 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   font-family: system-ui;
+
+}
+body{
+    height: 200vh;
+}
+
+header{
+    display: flex;
+    justify-content: space-evenly;
+    height: 70px;
+    align-items: center;
+    background-color: transparent;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+header.scrolled {
+    background-color: #222; 
+}
+
+
+header .nav{
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+    list-style: none;
+    color: #fff;
+}
+
+.nav li{
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+header .nav li a{
+    text-decoration: none;
+    text-transform: capitalize;
+    color: #fff;
+    font-weight: 500;
+    transition: transform 3s ease;
+
+}
+.nav li:hover a{
+    text-decoration: underline;
+    text-underline-offset: 0.8em;
+    text-decoration-color: #0BBC5A;
+    text-decoration-thickness: 1px;
+}
+.nav li:hover i{
+    transform: rotate(180deg);
+    transition: 0.4s ease;
+}
+
+.active {
+    text-decoration: underline;
+    text-underline-offset: 0.8em;
+    text-decoration-color: #0BBC5A;
+    text-decoration-thickness: 1px;
+}
+
+.home{
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    /* animation: imgOpacity 3s ease infinite;  */    
+    position: relative;
+}
+
+.home .text{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    gap: 10px;
+    left: 17%;
+    top: 30%
+}
+.home h2{
+    font-size: 5em;
+    font-weight: 500;
+}
+.home p{
+    font-size: 4em;
+    font-weight: 100;
+}
+.home span
+{
+    width: 20px;
+    font-size: 0.4em;
+    display: inline-block;
+    width: 60%;
+
+
+}
+.home button{
+    border: none;
+    border-radius: 30px;
+    font-size: 2sem;
+    width: 170px;
+    height: 45px;
+    background-color: #0BBC5A;
+    transition: background-color 0.5s ease;
+    color: #fff;
+    font-size: 1.2em;
+    margin-top: 10%;
+}
+
+.home button:hover{
+    background-color: #222;
+
+}
+/* @keyframes imgOpacity{
+    from{
+        opacity: 0.5;
+    }
+    to{
+        opacity: 1;
+    }
+} */
+
