@@ -43,19 +43,33 @@ header .nav li a{
     text-decoration: none;
     text-transform: capitalize;
     color: #fff;
-    font-weight: 500;
+    font-weight: 300;
     transition: transform 3s ease;
 
 }
-.nav li:hover a{
+.nav li:hover .headLine{
     text-decoration: underline;
     text-underline-offset: 0.8em;
     text-decoration-color: #0BBC5A;
     text-decoration-thickness: 1px;
 }
-.nav li:hover i{
+.nav li:hover .arrow{
     transform: rotate(180deg);
     transition: 0.4s ease;
+}
+.nav .searchIcon
+{
+    width: 50px;
+    height: 50px;
+    align-content: center;
+    padding-left: 17px;
+    border-radius: 50%;
+    transition: background-color 0.5s ease;
+}
+.nav .searchIcon:hover
+{
+    background-color: #0BBC5A;
+
 }
 
 .active {
@@ -63,6 +77,59 @@ header .nav li a{
     text-underline-offset: 0.8em;
     text-decoration-color: #0BBC5A;
     text-decoration-thickness: 1px;
+}
+
+.dropdown{
+    position: relative;
+    display: inline-block;
+}
+
+
+header ul li .dropdown-content{
+    display: none;
+    background-color: #fff;
+    position: absolute;
+    z-index: 10;
+    top: 40px;
+    right: 0;
+    font-size: 1em;
+    border-radius: 7px; 
+    align-content: center;
+    min-width: 160px;
+    height: auto;   
+    padding: 20px 0;
+
+    opacity: 0;
+    transition: opacity 0.3s ease;
+
+} 
+header ul li .dropdown-content a{
+    text-decoration: none;
+    display: block;
+    padding-left: 30px;
+    padding-bottom: 5px;
+    color: #0BBC5A;
+
+}
+
+.dropdown:hover .dropdown-content{
+    display: block;
+    opacity: 1;
+}
+
+.dropdown-content .page-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between ;
+    gap: 50px;
+}
+.dropdown-content .page-container a{
+    padding-right: 30px;
+}
+.dropdown-content .page-container .pagesHeading{
+    padding-left: 30px;
+    padding-bottom: 10px;
+    color: #222;
 }
 
 .home{
@@ -79,7 +146,7 @@ header .nav li a{
     flex-direction: column;
     position: absolute;
     gap: 10px;
-    left: 17%;
+    left: 13%;
     top: 30%
 }
 .home h2{
