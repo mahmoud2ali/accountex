@@ -30,6 +30,14 @@ $(document).ready(function () {
     }
     changeBackground();
     setInterval(changeBackground, 5000)
+
+
+    $(".asidebtn").click(()=>{ 
+        $(".navigation-list-items").slideToggle();       
+
+    });
+    
+ 
         
 });
 
