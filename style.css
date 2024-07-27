@@ -6,7 +6,7 @@
 
 }
 body{
-    height: 200vh;
+    /* height: 200vh; */
 }
 
 header .logo i{
@@ -80,16 +80,15 @@ header.scrolled {
 .list-item div{
     display:none;
     flex-direction: column;
-    background-color: #222;
+    background-color: #333;
     width: 100%;
-    height: 200%;
+    min-height: 50px;
     padding: 30px;
     gap: 10px;
     position: absolute;
     top: 100%;
     left: 0%;
-    position: absolute;
-    
+    position: absolute; 
     z-index: 55;
     /* opacity: 0; */
 
@@ -103,6 +102,7 @@ header.scrolled {
     color: #fff;
     display: flex;
     flex-direction: column;
+    height: 100%;
 
 }
 .aside-page-container div{
@@ -192,7 +192,7 @@ header ul li .dropdown-content{
     background-color: #fff;
     position: absolute;
     z-index: 10;
-    top: 40px;
+    top: 55px;
     right: 0;
     font-size: 1em;
     border-radius: 7px; 
@@ -293,6 +293,98 @@ header ul li .dropdown-content a{
     }
 } */
 
+
+.card-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    min-height: 230px
+
+}
+.card{
+    color: #fff;
+    padding: 20px ;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-weight: 300;
+}
+.card i{
+    font-size: 2.5em;
+}
+.card .last-card-heading, .card h2{
+    font-weight: 300;
+}
+
+.cardbtn{
+    border: none;
+    font-size: 1.2em;
+    padding-bottom: 1%;
+    background-color: #0BBC5A;
+    border-radius: 50px;
+    font-weight: 600;
+    color: #fff;
+    height: 60px;
+    width: 60%;
+    transition: background-color 0.5s ease;
+}
+.cardbtn:hover{
+    background-color: #222;
+}
+
+.c_1{
+    background-color: #0BBC5A;
+}
+.c_2{
+    background-color: #09A04D;
+}
+.c_3{
+    background-color: #088D43;
+}
+.c_4{
+    background-color: #08833F;
+}
+
+
+.services{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 70px;
+    width: 70%;
+    margin: 0 auto;
+    
+}
+.services > h2{
+    font-weight: 300;
+    font-size: 2.7em;
+    margin: 0 0 25px 0;
+}
+.services > p{
+    width: 80%;
+    margin: 0 auto 30px auto;
+    font-weight: 200;
+}   
+.service-card-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 50px;
+}
+.service-card-container .service-card i{
+    font-size: 3em;
+    color: #0BBC5A;
+    background-color: rgba(230,230,230, 0.5);
+    border-radius: 50%;
+    
+}
+.service-card-container .service-card h2{
+    font-size: 1.3em;
+    font-weight: 300;
+}
+.service-card-container .service-card p{
+    font-size: 1em;
+    font-weight: 100;
+}
 @media (max-width : 1088px)
 {
     .asidebtn
@@ -315,7 +407,16 @@ header ul li .dropdown-content a{
     .home button{
         margin-top: 5%;
     }
+
+    
+    .card-container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        min-height: 230px
+    }
 }
+
 @media (max-width : 450px)
 {
     .home{
@@ -323,5 +424,19 @@ header ul li .dropdown-content a{
     }
     .home .text{
         font-size: 0.5em;
+    }
+
+    .card-container{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        min-height: 230px
+    }
+
+    .service-card-container{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+        gap: 50px;
     }
 }
