@@ -5,6 +5,11 @@
    font-family: system-ui;
 
 }
+
+html{
+    scroll-behavior: smooth;
+}
+
 body{
     /* height: 200vh; */
 }
@@ -375,8 +380,23 @@ header ul li .dropdown-content a{
     display: flex;
     flex-direction: column;
     gap: 15px;
+    transition: transform 1s, opacity 1s;
+    
 }
 
+.service-card-container .right{
+    transform: translate(-1000px,0);
+    animation: servicecards 2s forwards;
+}
+.service-card-container .left{
+    transform: translate(1000px,0);
+    animation: servicecards 1s forwards;
+}
+@keyframes servicecards {
+    to{
+        transform: translate(0, 0);
+    }
+}
 .service-card-container .service-card i{
     font-size: 3em;
     color: #0BBC5A;
