@@ -39,6 +39,8 @@ header .navigation-list{
 }
 header.scrolled {
     background-color: #222; 
+    box-shadow: 0 0 0 5px rgba(0,0,0, 0.1);
+
 }
 .asidebtn{
     display: none;
@@ -416,9 +418,10 @@ header ul li .dropdown-content a{
 }
 
 .about{
-    padding-top: 70px ;
-    margin: 80px auto 0 auto;
-    background-color: rgb(245,245,245);
+    padding-top: 70px;
+    margin-top: 80px;
+    background-color: rgb(250,250,250);
+    width: 100%;
 }
 .about > h2{
     text-align: center;
@@ -434,12 +437,13 @@ header ul li .dropdown-content a{
     padding-bottom: 30px;
 }
 
-.about >div{
+.about > div{
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 120px;
     width: 80%;
     margin: 0 auto;
+    margin-bottom: 80px;
 }
 .about div div{
     display: flex;
@@ -455,6 +459,7 @@ header ul li .dropdown-content a{
     justify-content: space-between;
     position: relative;
 }
+
 .about .percent::after
 {
     content: "";
@@ -463,7 +468,7 @@ header ul li .dropdown-content a{
     width: 100%;
     position: absolute;
     z-index: 1;
-    top: 100%;
+    top: 105%;
 }
 .about .percent::before
 {
@@ -473,7 +478,7 @@ header ul li .dropdown-content a{
     width: 0;
     position: absolute;
     z-index: 2;
-    top: 100%;
+    top: 105%;
 }
 .percent-75::before{
     animation: fill-75 2s forwards;
@@ -517,6 +522,98 @@ header ul li .dropdown-content a{
 }
 
 
+.statistics{
+    background-color: #222;
+    padding-top: 70px;
+    margin-top: 80px;
+    width: 100%;
+}
+.statistics > h2{
+    text-align: center;
+    color: #fff;
+    font-size: 2em;
+    font-weight: 300;
+    margin-bottom: 50px;
+}
+.statistics .grid-stat
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 80%;
+    margin: 0 auto;
+    gap: 50px;
+    padding-bottom: 70px;
+}
+.stat-first-p{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.stat-first-p i{
+    font-size: 2em;
+}
+.stat-first-p p{
+    color: #fff;
+    letter-spacing: 1.5px;
+    word-spacing: 2px;
+    font-weight: 100;
+} 
+
+.stat-second{
+    color: #fff;
+    font-weight: 200;
+    padding-top: 40px;
+}
+
+.stat-percent{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    color: #fff;
+    font-size: 1.2em;
+}
+
+.stat-percent .circle-percent
+{
+    border: 2px solid rgb(200, 200, 200);
+    height: 100px;
+    width: 100px;
+    margin: 0 auto;
+    border-radius: 50%;
+    align-content: center;
+    margin-bottom: 10px;
+}
+
+.stat-percent .circle-50{
+    transform: rotate(-180deg);
+    animation: fill-circle-50 3s ease infinite alternate;
+
+}
+
+.stat-percent .circle-100{
+    transform: rotate(-180deg);
+    animation: fill-circle-100 3s ease infinite alternate;
+}
+@keyframes fill-circle-50{
+    0%{
+        background: #fff;
+    }
+    100%{
+        background: conic-gradient(#0BBC5A 00deg 180deg, transparent 180deg 360deg);
+        transform: rotate(0);
+    }
+ }
+@keyframes fill-circle-100{
+    0%{
+        background: #fff;
+    }
+    100%{
+        transform: rotate(0);
+        background: conic-gradient(#0BBC5A 00deg 180deg, #0BBC5A 180deg 360deg);
+   }
+}
+
 
 @media (max-width : 1088px)
 {
@@ -554,14 +651,50 @@ header ul li .dropdown-content a{
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr;
         width: 60%;
-        margin: 0 auto;
+        margin: 0 auto 80px auto;
         gap: 20px;
     }
     .about img{
         width: 100%;
         margin: 0 auto;
     }
+
+
+    .statistics .grid-stat
+    {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 0.3fr 1fr 1fr;
+        grid-template-areas: 
+        "head head"
+        "p1 p1"
+        "stat1 stat2";
+        width: 90%;
+        margin: 0 auto;
+        gap: 0px;
+        padding-bottom: 70px;
+    }
+    .statistics .grid-stat h2{
+        grid-area: head;
+        margin-bottom: 0;
+    }
+    .statistics > h2{
+        margin-bottom: 0px;
+    }
+    .statistics .grid-stat .stat-first-p{
+        grid-area: p1;
+    }
+    .statistics .grid-stat .stat-second
+    {
+        grid-area: stat1;
+    }
+
+    .statistics .grid-stat .stat-percent{
+        grid-area: stat2;
+    }
 }
+
+
+
 
 @media (max-width : 576px)
 {
@@ -592,11 +725,44 @@ header ul li .dropdown-content a{
         flex-direction: column;
         justify-content: space-around;
         gap: 15px;
-        margin: 0 auto;
+        margin: 0 auto 80px auto;
     }
     .about img{
         width: 100%;
         height: 20vh;
         margin: 0 auto;
+    }
+
+    .statistics .grid-stat
+    {
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.3fr 1fr 0.5fr 1fr;
+        grid-template-areas: 
+        "head"
+        "p1"
+        "stat1"
+        "stat2";
+        width: 90%;
+        margin: 0 auto;
+        gap: 0px;
+        padding-bottom: 70px;
+    }
+    .statistics .grid-stat h2{
+        grid-area: head;
+        margin-bottom: 0;
+    }
+    .statistics > h2{
+        margin-bottom: 0px;
+    }
+    .statistics .grid-stat .stat-first-p{
+        grid-area: p1;
+    }
+    .statistics .grid-stat .stat-second
+    {
+        grid-area: stat1;
+    }
+
+    .statistics .grid-stat .stat-percent{
+        grid-area: stat2;
     }
 }
