@@ -8,6 +8,17 @@
 html{
     scroll-behavior: smooth;
 }
+::-webkit-scrollbar{
+    background-color: #222;
+    width: 20px;
+}
+::-webkit-scrollbar-thumb
+{
+    background-color: #0BBC5A;
+    border: 7px solid #222;
+    border-radius: 6px;
+}
+
 
 body{
     /* height: 200vh; */
@@ -245,11 +256,10 @@ header ul li .dropdown-content a{
 .home{
     height: 100vh;
     background-size: cover;
-    background-position: center;
+    background-position: center;;
     color: #fff;
-    /* animation: imgOpacity 3s ease infinite;  */    
+    animation: imgOpacity 5s ease infinite;      
     position: relative;
-
 }
 
 .home .text{
@@ -290,24 +300,23 @@ header ul li .dropdown-content a{
 
 .home button:hover{
     background-color: #222;
-
 }
-/* @keyframes imgOpacity{
+@keyframes imgOpacity{
     from{
         opacity: 0.5;
     }
     to{
         opacity: 1;
     }
-} */
+}
 
 
 .card-container{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    min-height: 230px
-
+    min-height: 230px;
 }
+
 .card{
     color: #fff;
     padding: 20px ;
@@ -315,6 +324,7 @@ header ul li .dropdown-content a{
     flex-direction: column;
     gap: 20px;
     font-weight: 300;
+    opacity: 0;
 }
 .card i{
     font-size: 2.5em;
@@ -341,17 +351,36 @@ header ul li .dropdown-content a{
 
 .c_1{
     background-color: #0BBC5A;
+    animation: servecis-animation 1s ease 2s forwards;
+    transform: translate(-1500px, 0);
 }
 .c_2{
     background-color: #09A04D;
+    animation: servecis-animation 2s ease forwards;
+    transform: translate(-1500px, 0);
 }
 .c_3{
     background-color: #088D43;
+    animation: name duration timing-function delay iteration-count direction fill-mode;
+    animation: servecis-animation 2s ease forwards;
+    transform: translate(1500px, 0);
+
 }
 .c_4{
     background-color: #08833F;
+    animation: servecis-animation 1s ease 2s forwards;
+    transform: translate(1500px, 0);
 }
 
+@keyframes servecis-animation{
+    from{
+        /* transform: translate(-1500px, 0); */
+    }    
+    to{
+        opacity: 1;
+        transform: translate(0,0);
+    }
+}
 
 .services{
     display: flex;
