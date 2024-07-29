@@ -872,6 +872,26 @@ header ul li .dropdown-content a{
     .services > p{
         width: 100%;
     }   
+
+    .c_1{
+        animation: servecis-animation 2s ease forwards;
+        transform: translate(-1500px, 0);
+    }
+    .c_2{
+        animation: servecis-animation 2s ease 0.5s forwards;
+        transform: translate(-1500px, 0);
+    }
+    .c_3{
+        animation: servecis-animation 2s ease 1s forwards;
+        transform: translate(-1500px, 0);
+    
+    }
+    .c_4{
+        animation: servecis-animation 2s ease 1.5s forwards;
+        transform: translate(-1500px, 0);
+    }
+    
+
     .about >div{
         display: flex;
         /* grid-template-columns: 1fr;
