@@ -268,7 +268,20 @@ header ul li .dropdown-content a{
     position: absolute;
     gap: 10px;
     left: 17%;
-    top: 30%
+    top: 30%;
+    animation: home-animation 2s ease forwards;
+}
+
+
+@keyframes home-animation{
+    from{
+        opacity: 0;
+        transform: translate(0,500px);
+    }
+    to{
+        opacity: 1;
+        transform: translate(0,0px);
+    }
 }
 .home h2{
     font-size: 5em;
@@ -349,7 +362,7 @@ header ul li .dropdown-content a{
     background-color: #222;
 }
 
-.c_1{
+/* .c_1{
     background-color: #0BBC5A;
     animation: servecis-animation 1s ease 2s forwards;
     transform: translate(-1500px, 0);
@@ -370,7 +383,29 @@ header ul li .dropdown-content a{
     background-color: #08833F;
     animation: servecis-animation 1s ease 2s forwards;
     transform: translate(1500px, 0);
+} */
+.c_1{
+    background-color: #0BBC5A;
+    animation: servecis-animation 2s ease 1.5s forwards;
+    transform: translate(-1500px, 0);
 }
+.c_2{
+    background-color: #09A04D;
+    animation: servecis-animation 2s ease 1s forwards;
+    transform: translate(-1500px, 0);
+}
+.c_3{
+    background-color: #088D43;
+    animation: servecis-animation 2s ease 0.5s forwards;
+    transform: translate(-1500px, 0);
+
+}
+.c_4{
+    background-color: #08833F;
+    animation: servecis-animation 2s ease forwards;
+    transform: translate(-1500px, 0);
+}
+
 
 @keyframes servecis-animation{
     from{
