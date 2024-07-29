@@ -29,7 +29,7 @@ header{
     background-color: transparent;
     position: fixed;
     top: 0;
-    width: 100%;
+    width: 100vw;
     z-index: 1000;
     transition: background-color 0.3s ease;
 }
@@ -360,7 +360,6 @@ header ul li .dropdown-content a{
     padding-top: 70px;
     width: 70%;
     margin: 0 auto;
-    
 }
 .services > h2{
     font-weight: 300;
@@ -382,24 +381,30 @@ header ul li .dropdown-content a{
 .service-card-container .service-card{
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    transition: transform 1s, opacity 1s;
-    
+    gap: 15px;   
+    animation: servicecards-animation 3s ease forwards; 
 }
 
-.service-card-container .right{
-    transform: translate(-1000px,0);
-    animation: servicecards 2s forwards;
-}
-.service-card-container .left{
-    transform: translate(1000px,0);
-    animation: servicecards 1s forwards;
-}
-@keyframes servicecards {
-    to{
-        transform: translate(0, 0);
+@keyframes servicecards-animation {
+    0% {
+        transform: translate(0, 500px);
+        opacity: 0;
     }
-}
+    25%{
+        opacity: 0.25;
+    }
+    50%{
+        opacity: 0.5;
+    }
+    50%{
+        opacity: 0.75;
+    }
+    100%{
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+} 
+
 .service-card-container .service-card i{
     font-size: 3em;
     color: #0BBC5A;
@@ -416,9 +421,9 @@ header ul li .dropdown-content a{
     font-size: 1em;
     font-weight: 100;
 }
-
+/* about section -------------------------------------- */
 .about{
-    padding-top: 70px;
+    padding: 70px 0 80px 0;
     margin-top: 80px;
     background-color: rgb(250,250,250);
     width: 100%;
@@ -443,12 +448,11 @@ header ul li .dropdown-content a{
     gap: 120px;
     width: 80%;
     margin: 0 auto;
-    margin-bottom: 80px;
 }
 .about div div{
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 87px;
     font-weight: 300;
 }
 .about img{
@@ -520,12 +524,12 @@ header ul li .dropdown-content a{
 .about button:hover{
     background-color: #222;
 }
+/*about section ending -------------------------------------- */
 
 
 .statistics{
     background-color: #222;
     padding-top: 70px;
-    margin-top: 80px;
     width: 100%;
 }
 .statistics > h2{
@@ -586,33 +590,42 @@ header ul li .dropdown-content a{
 }
 
 .stat-percent .circle-50{
-    transform: rotate(-180deg);
-    animation: fill-circle-50 3s ease infinite alternate;
-
+    animation: fill-circle-50 2s ease 1 forwards;
 }
-
-.stat-percent .circle-100{
-    transform: rotate(-180deg);
-    animation: fill-circle-100 3s ease infinite alternate;
+.stat-percent .circle-50 p{
+    animation: fill-circle-50-p 3s ease 1 forwards;
+}
+@keyframes fill-circle-50-p{
+    to{
+        transform: rotate(410deg);
+    }
 }
 @keyframes fill-circle-50{
-    0%{
-        background: #fff;
+    100% {
+        transform: rotate(-50deg);
+        border-top-color: #0BBC5A;
+        border-left-color: #0BBC5A;
+
     }
-    100%{
-        background: conic-gradient(#0BBC5A 00deg 180deg, transparent 180deg 360deg);
-        transform: rotate(0);
+}
+ .stat-percent .circle-100{
+    animation: fill-circle-100 2s ease 1 forwards;
+}
+.stat-percent .circle-100 p{
+    animation: fill-circle-100-p 3s ease 1 forwards;
+}
+@keyframes fill-circle-100-p{
+    to{
+        transform: rotate(410deg);
+    }
+}
+@keyframes fill-circle-100{
+    100% {
+        transform: rotate(-50deg);
+        border-color: #0BBC5A;
+
     }
  }
-@keyframes fill-circle-100{
-    0%{
-        background: #fff;
-    }
-    100%{
-        transform: rotate(0);
-        background: conic-gradient(#0BBC5A 00deg 180deg, #0BBC5A 180deg 360deg);
-   }
-}
 
 
 @media (max-width : 1088px)
@@ -718,6 +731,9 @@ header ul li .dropdown-content a{
         grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
         gap: 50px;
     }
+    .services > p{
+        width: 100%;
+    }   
     .about >div{
         display: flex;
         /* grid-template-columns: 1fr;
@@ -733,6 +749,10 @@ header ul li .dropdown-content a{
         margin: 0 auto;
     }
 
+    .about > p{
+        width: 90%;
+    }
+    
     .statistics .grid-stat
     {
         grid-template-columns: 1fr;
