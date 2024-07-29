@@ -37,6 +37,76 @@ $(document).ready(function () {
 
     });
         
+
+   
+    let testimonials_list = document.querySelectorAll(".test-container")
+    let testimonials_btns = document.querySelectorAll(".test-btn")
+
+    $('#btn1').click(() => { 
+        
+        testimonials_list.forEach(item => 
+            $(item).removeClass('active-container')
+        );
+        
+        testimonials_btns.forEach(btn =>
+            $(btn).removeClass("test-active-btn")
+        );
+
+        $("#btn1").addClass("test-active-btn");
+
+
+        $(".test-container-1").addClass("active-container");
+    });
+
+    $('#btn2').click(() => { 
+        testimonials_list.forEach(item => 
+            $(item).removeClass('active-container')
+        );
+
+        testimonials_btns.forEach(btn =>
+            $(btn).removeClass("test-active-btn")
+        );
+
+        $("#btn2").addClass("test-active-btn");
+
+
+        $(".test-container-2").addClass("active-container");
+
+    });
+
+    $('#btn3').click(() => { 
+        
+        testimonials_list.forEach(item => 
+            $(item).removeClass('active-container')
+        );
+        testimonials_btns.forEach(btn =>
+            $(btn).removeClass("test-active-btn")
+        );
+
+        $("#btn3").addClass("test-active-btn");
+
+        
+        $(".test-container-3").addClass("active-container");
+    });
+
+    $('#btn4').click(() => { 
+        
+        testimonials_list.forEach(item => 
+            $(item).removeClass('active-container')
+        );
+
+        testimonials_btns.forEach(btn =>
+            $(btn).removeClass("test-active-btn")
+        );
+
+        $("#btn4").addClass("test-active-btn");
+
+        $(".test-container-4").addClass("active-container");
+    });
+
+
+
+
 });
 
 

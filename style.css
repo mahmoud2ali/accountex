@@ -628,6 +628,110 @@ header ul li .dropdown-content a{
  }
 
 
+
+ .testimonials{
+    background-color: rgb(250,250,250);
+    padding: 70px 0 80px 0;
+}
+.testimonials h2{
+    text-align: center;
+    font-size: 3em;
+    font-weight: 400;
+}
+.testimonials .test-container{
+    display: none;
+    grid-template-columns: 1fr 1fr;
+    width: 70%;
+    margin: 0 auto;
+    gap: 70px;
+}
+.testimonials .active-container{
+    display: grid;
+}
+
+.testimonials .test-container .test-card{
+    margin-top: 70px;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 50px;
+    animation: testimonials-animation 2s ease;
+}
+@keyframes testimonials-animation {
+    from{
+        opacity: 0.2;
+    }
+    to{
+        opacity: 1;
+    }
+}
+.testimonials .test-container .test-card .test-card-heading
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+.testimonials .test-container .test-card .test-card-heading .time{
+    font-weight: 100;
+}
+.testimonials .test-container .test-card i{
+    color: #0BBC5A;
+    font-size: 1.5em;
+}
+.testimonials .test-container .test-card > p{
+    font-weight: 200;
+    font-size: 1.2em;
+    padding-bottom: 30px;
+}
+
+.testimonials .test-container .test-card .author
+{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    align-items: center;
+}
+
+.testimonials .test-container .test-card .author h4{
+    color: #0BBC5A;
+    font-size: 1.3em;
+}
+.testimonials .test-container .test-card .author p{
+    font-weight: 200;
+}
+
+
+.testimonials .test-container .test-card img{
+    border-radius: 50%;
+}
+.testimonials .test-btns{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    gap: 30px;
+}
+.testimonials button{
+    width: 15px;
+    height: 15px;
+    background-color: #0BBC5A;
+    border: none;
+    border-radius: 50%;
+    opacity: 0.3;
+    transition: 0.5s ease;
+}
+.testimonials .test-active-btn
+{
+    opacity: 1;
+}
+.testimonials button:hover{
+    opacity: 1;
+}
+
+
+/* 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 */
+
+
+
 @media (max-width : 1088px)
 {
     .asidebtn
@@ -704,10 +808,15 @@ header ul li .dropdown-content a{
     .statistics .grid-stat .stat-percent{
         grid-area: stat2;
     }
+
+
+
+    .testimonials .test-container{
+        width: 95%;
+        margin: 0 auto;
+        gap: 20px;
+    }
 }
-
-
-
 
 @media (max-width : 576px)
 {
@@ -784,5 +893,16 @@ header ul li .dropdown-content a{
 
     .statistics .grid-stat .stat-percent{
         grid-area: stat2;
+    }
+
+
+
+
+    .testimonials .test-container{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        width: 90%;
+        margin: 0 auto;
+        gap: 0;
     }
 }
